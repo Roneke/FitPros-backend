@@ -5,13 +5,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    users = User.create(
+    user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
     )
+    if user.save
+      render json: { message: "User created successfully" }, status: :created
+    else
+      render json: { errors: user.errors.full_messages }, status: :bad_request
+    end
   end
 
   def update
@@ -22,6 +27,10 @@ class UsersController < ApplicationController
       Bio: params[:user][:Bio],
       Weekly_mile_goal: params[:user][:Bio],
     )
-    render json: user
+    if user.update
+      render json: user
+    else
+      render json: { error: "not working" }
+    end
   end
 end

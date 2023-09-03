@@ -1,23 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  First_name: MyString
-  Last_name: MyString
-  Email: MyString
-  Password_digest: MyString
-  Profile_img: MyString
-  Industry: MyString
-  Job_title: MyString
-  Bio: MyString
-  Weekly_mile_goal: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  password_digest: MyString
+  profile_img: MyString
+  industry: MyString
+  job_title: MyString
+  bio: MyString
+  weekly_mile_goal: 1
 
 two:
-  First_name: MyString
-  Last_name: MyString
-  Email: MyString
-  Password_digest: MyString
-  Profile_img: MyString
-  Industry: MyString
-  Job_title: MyString
-  Bio: MyString
-  Weekly_mile_goal: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  password_digest: MyString
+  profile_img: MyString
+  industry: MyString
+  job_title: MyString
+  bio: MyString
+  weekly_mile_goal: 1
