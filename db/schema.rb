@@ -10,20 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_01_021824) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_02_175836) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.string "user_id"
+    t.string "integer"
+    t.string "event_id"
+    t.text "text_area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "sport"
+    t.integer "distance"
+    t.datetime "date"
+    t.float "duration"
+    t.integer "user_id"
+    t.string "details"
+    t.string "city"
+    t.integer "zipcode"
+    t.float "latitude"
+    t.float "longtitude"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string "First_name"
-    t.string "Last_name"
-    t.string "Email"
-    t.string "Password_digest"
-    t.string "Profile_img"
-    t.string "Industry"
-    t.string "Job_title"
-    t.string "Bio"
-    t.integer "Weekly_mile_goal"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "profile_img"
+    t.string "industry"
+    t.string "job_title"
+    t.string "bio"
+    t.integer "weekly_mile_goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
