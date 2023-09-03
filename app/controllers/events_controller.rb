@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user, except: [:index, :show]
+
   def index
     @events = Event.all
 
@@ -12,8 +14,9 @@ class EventsController < ApplicationController
   end
 
   def create
+    pp params
     @event = Event.create(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       sport: params[:sport],
       distance: params[:distance],
       date: params[:date],
