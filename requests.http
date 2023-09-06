@@ -1,6 +1,6 @@
 
 POST http://localhost:3000/events.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2OTM4NjMyMDd9.mQx0xqsdoUEt4SbzHVV3WEpO43iMX-5qID4xkxbOIWU
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2OTQwNDM3MzN9.b9SWoKbyv20fqpF_hXxm1X4WCZWV1XkVMbVTdN3hf-A
 Content-Type: application/json
 
 {
@@ -12,9 +12,17 @@ Content-Type: application/json
   "zipcode": 12212,
   "latitude": 99999.0,
   "longtitude": 11111.0,
-  "image": "test"
+  "image": "test",
+  "address": "111 S Michigan Ave, Chicago, IL 60603"
 }
+###
+POST http://localhost:3000/industry.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2OTQwNDM3MzN9.b9SWoKbyv20fqpF_hXxm1X4WCZWV1XkVMbVTdN3hf-A
+Content-Type: application/json
 
+{
+  "name" :"test"
+}
 ### 
 POST http://localhost:3000/sessions.json
 Content-Type: application/json

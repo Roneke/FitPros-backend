@@ -14,7 +14,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    pp params
+    results = Geocoder.search(params[:address])
+    coordinates = results.first.coordinates
+    pp coordinates
     @event = Event.create(
       user_id: current_user.id,
       sport: params[:sport],
@@ -24,8 +26,8 @@ class EventsController < ApplicationController
       details: params[:details],
       city: params[:city],
       zipcode: params[:zipcode],
-      latitude: params[:latitude],
-      longtitude: params[:longtitude],
+      latitude: coordinates[0],
+      longtitude: coordinates[1],
       image: params[:image],
     )
     render json: @event.as_json
