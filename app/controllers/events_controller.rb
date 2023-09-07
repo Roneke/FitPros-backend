@@ -20,9 +20,9 @@ class EventsController < ApplicationController
     @event = Event.create(
       user_id: current_user.id,
       sport: params[:sport],
-      distance: params[:distance],
+      name: params[:name],
       date: params[:date],
-      duration: params[:duration],
+      address: params[:address],
       details: params[:details],
       city: params[:city],
       zipcode: params[:zipcode],

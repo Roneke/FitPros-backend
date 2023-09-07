@@ -2,9 +2,9 @@
 
 one:
   sport: MyString
-  distance: 1
+  name: MyString
   date: 2023-09-02 13:55:44
-  duration: 1.5
+  address: MyString
   user_id: 1
   details: MyString
   city: MyString
@@ -15,9 +15,9 @@ one:
 
 two:
   sport: MyString
-  distance: 1
+  name: Mystring
   date: 2023-09-02 13:55:44
-  duration: 1.5
+  address: MyString
   user_id: 1
   details: MyString
   city: MyString

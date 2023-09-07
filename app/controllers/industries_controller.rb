@@ -5,9 +5,9 @@ class IndustriesController < ApplicationController
   end
 
   def create
-    industry = Industry.create(
+    industry = IndustryUser.create(
       user_id: current_user.id,
-      name: params[:name],
+      industry_id: params[:industry_id],
     )
     render json: industry
   end

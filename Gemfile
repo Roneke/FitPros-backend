@@ -5,6 +5,8 @@ ruby "3.2.2"
 
 gem 'jwt'
 
+gem 'rack-cors'
+
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
