@@ -14,7 +14,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    results = Geocoder.search(params[:address])
+    location = "#{params[:address]} #{params[:city]} #{params[:state]} #{params[:zipcode]}"
+    pp location
+    results = Geocoder.search(location)
     coordinates = results.first.coordinates
     pp coordinates
     @event = Event.create(
