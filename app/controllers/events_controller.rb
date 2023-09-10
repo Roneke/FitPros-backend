@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
-    render json: @events.as_json
+    render json: @events.as_json(methods: [:friendly_date])
   end
 
   def show
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    location = "#{params[:address]} #{params[:city]} #{params[:state]} #{params[:zipcode]}"
+    location = "#{params[:address]} #{params[:city]}, #{params[:state]} #{params[:zipcode]}"
     pp location
     results = Geocoder.search(location)
     coordinates = results.first.coordinates
@@ -22,6 +22,7 @@ class EventsController < ApplicationController
     @event = Event.create(
       user_id: current_user.id,
       sport: params[:sport],
+      time: params[:time],
       name: params[:name],
       date: params[:date],
       address: params[:address],

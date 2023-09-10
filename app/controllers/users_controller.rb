@@ -20,6 +20,12 @@ class UsersController < ApplicationController
     end
   end
 
+  ###
+  def show
+    user = User.find(current_user.id)
+    render json: user.as_json(methods: [:events])
+  end
+
   ### update user profile
   def update
     user = User.find_by(id: params[:id])
