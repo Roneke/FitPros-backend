@@ -22,8 +22,8 @@ class UsersController < ApplicationController
 
   ###
   def show
-    user = User.find(current_user.id)
-    render json: user.as_json(methods: [:events])
+    pp current_user
+    render json: current_user
   end
 
   ### update user profile
@@ -32,15 +32,10 @@ class UsersController < ApplicationController
     if current_user == user.id
       user.first_name = params[:first_name] || user.first_name
       user.last_name = params[:last_name] || user.last_name
-      user.email = params[:email] || user.email
-      if params [:password]
-        user.password = params[:password] || user.password
-        user.password_confirmation = params[:password_confirmation]
-      end
       user.industry = params[:industry] || user.industry
       user.job_title = params[:job_title] || user.job_title
       user.bio = params[:bio] || user.bio
-      user.weekly_mile_goal = params[:weekly_mile_goal] || user.weekly_mile_goal
+      user.location = params[:location] || user.location
       user.profile_img = params[:profile_img] || user.profile_img
       if user.save
         render json: user
